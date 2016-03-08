@@ -9,6 +9,7 @@
 
 示例代码：<br />
 ```swift
+  //将demo中的 operator.swift 文件加入到项目中
   //使用 >  符号 来代替 [] 输出json中的字段值
   //使用 >> 符号来进行遍历并回调
   let json = [
