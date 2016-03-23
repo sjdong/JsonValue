@@ -24,10 +24,10 @@
 *            ]
 *        ]
 *     ]
-*  print(json > "school")    //输出 HANGZHOU
-*  (json > "grades") >> { row in
+*  print(json >~ "school")    //输出 HANGZHOU
+*  json >~ "grades" >>~ { row in
 *       if let r = row {
-*           print(r > "classes")
+*           print(r >~ "classes")
 *       }
 *  }
 *  //循环输出 2, 3
@@ -35,7 +35,7 @@
 
 
 infix operator >~ {associativity left precedence 180}
-infix operator >>~ {}
+infix operator >>~ {precedence 60}
 
 public func >~ (left: AnyObject?, right: String) -> AnyObject? {
     if let sureLeft = left {
