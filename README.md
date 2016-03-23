@@ -10,8 +10,8 @@
 示例代码：<br />
 ```swift
   //将demo中的 operator.swift 文件加入到项目中
-  //使用 >  符号 来代替 [] 输出json中的字段值
-  //使用 >> 符号来进行遍历并回调
+  //使用 >~  符号 来代替 [] 输出json中的字段值
+  //使用 >>~ 符号来进行遍历并回调
   let json = [
       "school": "HANGZHOU",
       "grades": [
@@ -26,16 +26,14 @@
       ]
   ]
   
-  print(json > "school")
+  print(json >~ "school")
   // 输出 HANGZHOU
   
-  (json > "grades") >> { row in
+  json >~ "grades" >>~ { row in
       if let r = row {
-          print(r > "classes")
+          print(r >~ "classes")
       }
   }
   //循环输出 2, 3
 ```
 从网络请求获得的数据处理也是一致
-
-刚学swift 2周 如果有更好的方法，欢迎指正
