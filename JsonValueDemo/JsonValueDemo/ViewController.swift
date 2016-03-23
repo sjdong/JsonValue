@@ -37,11 +37,11 @@ class ViewController: UIViewController {
             ]
         ]
         
-        print(json > "school")
+        print(json >~ "school")
         
-        (json > "grades") >> { row in
+        json >~ "grades" >>~ { row in
             if let r = row {
-                print(r > "classes")
+                print(r >~ "classes")
             }
         }
 
