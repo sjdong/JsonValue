@@ -34,24 +34,24 @@
 */
 
 
-infix operator > {associativity left}
-infix operator >> {}
+infix operator >~ {associativity left precedence 180}
+infix operator >>~ {}
 
-public func > (left: AnyObject?, right: String) -> AnyObject? {
+public func >~ (left: AnyObject?, right: String) -> AnyObject? {
     if let sureLeft = left {
-        return (sureLeft as! Dictionary<String, AnyObject>) > right
+        return (sureLeft as! Dictionary<String, AnyObject>) >~ right
     }
     return nil
 }
 
-public func > (left: Dictionary<String, AnyObject>?, right: String) -> AnyObject? {
+public func >~ (left: Dictionary<String, AnyObject>?, right: String) -> AnyObject? {
     if let sureLeft = left {
         return sureLeft[right]
     }
     return nil
 }
 
-public func >> (left: AnyObject?, right: ((AnyObject?) -> Void)) {
+public func >>~ (left: AnyObject?, right: ((AnyObject?) -> Void)) {
     guard let sureObj = left else {
         return right(nil)
     }
